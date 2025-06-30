@@ -11,7 +11,7 @@ Name: Illusion
 
 ## Live Website URL
 
-Link: https://hackclub.com
+Link: https://yassin-elmahdy123.github.io/Hackaccino/
 
 ## Code
 
@@ -19,8 +19,8 @@ GitHub Link: https://github.com/Yassin-Elmahdy123/Hackaccino
 
 ## How many hours did you spend on this?
 
-Hours: 1
+I spend about 4 hours on this project but writing the code itself took about 2 hours and 34 minutes.
 
 ## How did you build this?
 
-How: Using Next.js and by following Hack Club’s Next.js workshop!
+How: I built it using html, javascript, and the aframe script.
