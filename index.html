@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optical Illusion Circle</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-sky color="#000"></a-sky>
+        <a-entity id="wheel">
+        </a-entity>
+    </a-scene>
+    <script>
+      const wheel = document.getElementById('wheel');
+      const count = 16, radius = 3, amp = 1;
+      let t=150;
+/*
+This is my 3D website that I submited for Hackaccino. The idea of this website is to make the 
+*/
+      for(let i = 0; i < count/2; i++) {
+        const θ = (i / count) * Math.PI*2 ;
+        const x = Math.cos(θ) * radius;
+        const y = Math.sin(θ) * radius;
+        setTimeout(() => makeSphere(x, y,i),i*t);
+      }
+
+      function makeSphere(x, y, i) {
+        const round = n => Math.round(n * 1000) / 1000;
+        const baseX = round(x);
+        const baseY = round(y);
+        const oppX = round(-x);
+        const oppY = round(-y);
+
+        const s = document.createElement('a-sphere');
+        s.setAttribute('radius', 0.2);
+        s.setAttribute('color', '#0ff');
+        s.setAttribute('position', `${baseX} ${baseY} -10`);
+        s.setAttribute('animation', `property: position; to: ${oppX} ${oppY} -10; dir: alternate; dur: ${1000}; loop: true;easing: easeInOutSine;`);
+        wheel.appendChild(s);
+      }
+    </script>
+</body>
+</html>
